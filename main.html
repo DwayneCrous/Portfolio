@@ -3,16 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Dwayne C.</title>
   </head>
   <body>
     <header>
       <h1>Dwayne C.</h1>
-      <p>Welcome</p>
+      <p>Web Developer | Software Developer</p>
       <nav>
         <ul>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="contact-button" onclick="location.href='#contact'">
+              Get in touch
+            </button>
+          </li>
+          <li class="blog">
+            <a href="https://dwaynec.dev" target="_blank" rel="noopener"
+              >Blog</a
+            >
+          </li>
+          <li class="case-studies">
+            <a
+              href="https://dwaynec.dev/case-studies"
+              target="_blank"
+              rel="noopener"
+              >Case Studies</a
+            >
+          </li>
+          <li class="now-page">
+            <a href="https://dwaynec.dev/now" target="_blank" rel="noopener"
+              >Now</a
+            >
+          </li>
+          <li class="light-dark-toggle">
+            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+              🌙
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -24,6 +55,20 @@
           innovative solutions. I enjoy working on web development projects and
           exploring new technologies.
         </p>
+        <img src="images/me.jpg" alt="Dwayne C. Photo" />
+        <p>Tech Stack</p>
+        <ul class="tech-stack">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Svelte</li>
+          <li>Node.js</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>C#</li>
+          <li>C++</li>
+          <li>Svelte</li>
+        </ul>
       </section>
       <section class="projects" id="projects">
         <h2>Projects</h2>
@@ -61,6 +106,33 @@
               Assisted in the development of client websites, performed testing,
               and contributed to design discussions.
             </p>
+          </li>
+        </ul>
+      </section>
+      <section class="contact-me" id="contact-me">
+        <h2>Contact Me</h2>
+        <ul>
+          <li>
+            <a href="mailto:dwaynecrous206@gmail.com"
+              ><i class="fa-solid fa-envelope"></i>dwaynecrous206@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/dwaynecrous/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-linkedin"></i
+              >linkedin.com/in/dwaynecrous/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/DwayneCrous"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-github"></i>github.com/DwayneCrous</a
+            >
           </li>
         </ul>
       </section>
