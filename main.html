@@ -7,8 +7,385 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
     <title>Dwayne C.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #fafbfc;
+      }
+
+      /* Header Styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        height: 80px;
+      }
+
+      .header-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 2rem;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      header p {
+        margin: 0;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+
+      nav li {
+        display: flex;
+        align-items: center;
+      }
+
+      nav a,
+      .contact-button,
+      #theme-toggle {
+        text-decoration: none;
+        color: #222;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background 0.2s;
+      }
+
+      nav a:hover,
+      .contact-button:hover,
+      #theme-toggle:hover {
+        background: #f0f0f0;
+      }
+
+      .contact-button {
+        background: #222;
+        color: #fff;
+      }
+
+      .contact-button:hover {
+        background: #444;
+      }
+
+      main {
+        margin-top: 80px;
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Slides Layout */
+      .slides-container {
+        position: relative;
+      }
+
+      .slide {
+        min-height: calc(100vh - 80px - 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        background: #fafbfc;
+        box-sizing: border-box;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .slide h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #222;
+      }
+
+      /* About Section */
+      .slide-about {
+        text-align: center;
+      }
+
+      .slide-about p {
+        max-width: 700px;
+        margin: 1.5rem auto;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .slide-about img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      .tech-stack li {
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 0.5rem 1.25rem;
+        color: #222;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      /* Projects Section */
+      .slide-projects {
+        min-height: auto;
+        padding-bottom: 6rem;
+      }
+
+      .bento-board {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        gap: 2.5rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      .bento-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.09);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        transition: all 0.3s ease;
+      }
+
+      .bento-card:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+        transform: translateY(-4px);
+      }
+
+      .bento-title {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      .bento-content {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .bento-desc {
+        flex: 1.5;
+        display: flex;
+        align-items: center;
+      }
+
+      .bento-desc p {
+        font-size: 1.05rem;
+        color: #444;
+        line-height: 1.7;
+        margin: 0;
+        text-align: left;
+      }
+
+      .bento-img {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bento-img img {
+        width: 100%;
+        max-width: 400px;
+        height: 250px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #f5f5f5;
+        padding: 0.5rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Work Experience Section */
+      .slide-work-experience ul {
+        list-style: none;
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .slide-work-experience li {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      }
+
+      .slide-work-experience h3 {
+        font-size: 1.5rem;
+        color: #222;
+        margin-bottom: 0.5rem;
+      }
+
+      .slide-work-experience p {
+        color: #555;
+        margin: 0.5rem 0;
+        text-align: left;
+      }
+
+      .slide-work-experience p:first-of-type {
+        color: #888;
+        font-size: 0.95rem;
+        font-style: italic;
+      }
+
+      /* Contact Section */
+      .slide-contact-me ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .slide-contact-me li {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s ease;
+      }
+
+      .slide-contact-me li:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        transform: translateX(8px);
+      }
+
+      .slide-contact-me a {
+        color: #222;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .slide-contact-me a i {
+        font-size: 1.5rem;
+        color: #555;
+      }
+
+      /* Footer */
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        padding: 1rem 0;
+        z-index: 1000;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          height: auto;
+          padding: 1rem;
+          gap: 1rem;
+        }
+
+        .header-info {
+          margin-right: 0;
+          align-items: center;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        main {
+          margin-top: 120px;
+        }
+
+        .bento-board {
+          grid-template-columns: 1fr;
+        }
+
+        .bento-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .bento-desc p {
+          text-align: center;
+        }
+
+        .bento-img img {
+          max-width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -53,6 +430,7 @@
       <div class="slides-container">
         <div class="slide slide-about" id="about">
           <h2>About Me</h2>
+          <img src="images/dwayne.jpg" alt="Dwayne C. Photo" />
           <p>
             Hello! I'm Dwayne Crous, an aspiring software developer that has had
             a love with technology since I was very young. I love building,
@@ -60,8 +438,7 @@
             my ideas come to life. I am currently studying a bachelor's degree
             in Software Development while working part time at a hardware store.
           </p>
-          <img src="images/me.jpg" alt="Dwayne C. Photo" />
-          <p>Tech Stack</p>
+          <p style="font-weight: 600; margin-top: 2rem">Tech Stack</p>
           <ul class="tech-stack">
             <li>HTML</li>
             <li>CSS</li>
@@ -72,58 +449,93 @@
             <li>Java</li>
             <li>C#</li>
             <li>C++</li>
-            <li>Svelte</li>
           </ul>
         </div>
         <div class="slide slide-projects" id="projects">
           <h2>Projects</h2>
           <div class="bento-board">
             <div class="bento-card">
-              <h3>Bean Map</h3>
-              <p>
-                A comprehensive Svelte web app to discover, track, and explore
-                coffee shops worldwide. Built with OpenStreetMap data and
-                featuring a complete gamification system with challenges,
-                badges, and detailed user profiles.
-              </p>
-              <img src="images/" alt="Bean Map Screenshot" />
+              <h3 class="bento-title">Bean Map</h3>
+              <div class="bento-content">
+                <div class="bento-desc">
+                  <p>
+                    A comprehensive Svelte web app to discover, track, and
+                    explore coffee shops worldwide. Built with OpenStreetMap
+                    data and featuring a complete gamification system with
+                    challenges, badges, and detailed user profiles.
+                  </p>
+                </div>
+                <div class="bento-img">
+                  <img src="images/beanmap.png" alt="Bean Map Screenshot" />
+                </div>
+              </div>
             </div>
             <div class="bento-card">
-              <h3>SCFTA - Super Cool Finance Tracker App</h3>
-              <p>
-                SuperCoolFinanceTracker is a modern, user-friendly finance
-                tracking application built with Svelte. Effortlessly manage your
-                income, expenses, and budgets—all in one place.
-              </p>
-              <img src="images/" alt="SCFTA Screenshot" />
+              <h3 class="bento-title">
+                SCFTA - Super Cool Finance Tracker App
+              </h3>
+              <div class="bento-content">
+                <div class="bento-desc">
+                  <p>
+                    SuperCoolFinanceTracker is a modern, user-friendly finance
+                    tracking application built with Svelte. Effortlessly manage
+                    your income, expenses, and budgets—all in one place.
+                  </p>
+                </div>
+                <div class="bento-img">
+                  <img src="images/scfta.png" alt="SCFTA Screenshot" />
+                </div>
+              </div>
             </div>
             <div class="bento-card">
-              <h3>Orion</h3>
-              <p>
-                Orion is a multi-purpose Discord bot designed for moderation,
-                utility, and fun. It offers weather and currency APIs, news
-                headlines, moderation tools, interactive mini-games, and
-                more—all powered by discord.js.
-              </p>
-              <img src="images/" alt="Orion Screenshot" />
+              <h3 class="bento-title">Orion</h3>
+              <div class="bento-content">
+                <div class="bento-desc">
+                  <p>
+                    Orion is a multi-purpose Discord bot designed for
+                    moderation, utility, and fun. It offers weather and currency
+                    APIs, news headlines, moderation tools, interactive
+                    mini-games, and more—all powered by discord.js.
+                  </p>
+                </div>
+                <div class="bento-img">
+                  <img src="images/orion.png" alt="Orion Screenshot" />
+                </div>
+              </div>
             </div>
             <div class="bento-card">
-              <h3>Go-Do-It</h3>
-              <p>
-                A simple terminal-based Todo List application written in Go,
-                using the Bubble Tea TUI framework.
-              </p>
-              <img src="images/" alt="Go-Do-It Screenshot" />
+              <h3 class="bento-title">Go-Do-It</h3>
+              <div class="bento-content">
+                <div class="bento-desc">
+                  <p>
+                    A simple terminal-based Todo List application written in Go,
+                    using the Bubble Tea TUI framework.
+                  </p>
+                </div>
+                <div class="bento-img">
+                  <img src="images/godoit.png" alt="Go-Do-It Screenshot" />
+                </div>
+              </div>
             </div>
             <div class="bento-card">
-              <h3>Dwayne's Database Viewer</h3>
-              <p>
-                This project is a full-stack SQLite database viewer and manager.
-                It features a Node.js backend with REST API endpoints and a
-                React frontend for browsing, editing, and managing database
-                tables and files through a user-friendly web interface.
-              </p>
-              <img src="images/" alt="Database Viewer Screenshot" />
+              <h3 class="bento-title">Dwayne's Database Viewer</h3>
+              <div class="bento-content">
+                <div class="bento-desc">
+                  <p>
+                    This project is a full-stack SQLite database viewer and
+                    manager. It features a Node.js backend with REST API
+                    endpoints and a React frontend for browsing, editing, and
+                    managing database tables and files through a user-friendly
+                    web interface.
+                  </p>
+                </div>
+                <div class="bento-img">
+                  <img
+                    src="images/db-viewer.png"
+                    alt="Database Viewer Screenshot"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -141,47 +553,50 @@
             </li>
             <li>
               <h3>Bayside Hardware</h3>
-              <p>December 2025 - December 2027</p>
+              <p>December 2023 - December 2027</p>
               <p>
-                Worked full time as a cashier, sales assistant, stock
+                Working part-time as a cashier, sales assistant, stock
                 management, stock labeling, deliveries and anywhere where my
                 help was needed.
               </p>
             </li>
           </ul>
         </div>
-        <div class="slide slide-contact-me" id="contact-me">
+        <div class="slide slide-contact-me" id="contact">
           <h2>Contact Me</h2>
           <ul>
             <li>
-              <a href="mailto:dwaynecrous206@gmail.com"
-                ><i class="fa-solid fa-envelope"></i>dwaynecrous206@gmail.com</a
-              >
+              <a href="mailto:dwaynecrous206@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                dwaynecrous206@gmail.com
+              </a>
             </li>
             <li>
               <a
                 href="https://www.linkedin.com/in/dwaynecrous/"
                 target="_blank"
                 rel="noopener"
-                ><i class="fa-brands fa-linkedin"></i
-                >linkedin.com/in/dwaynecrous/</a
               >
+                <i class="fa-brands fa-linkedin"></i>
+                linkedin.com/in/dwaynecrous/
+              </a>
             </li>
             <li>
               <a
                 href="https://github.com/DwayneCrous"
                 target="_blank"
                 rel="noopener"
-                ><i class="fa-brands fa-github"></i>github.com/DwayneCrous</a
               >
+                <i class="fa-brands fa-github"></i>
+                github.com/DwayneCrous
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </main>
+    <footer>
+      <p>&copy; 2025 Dwayne C.</p>
+    </footer>
   </body>
-  <footer>
-    <p>&copy; 2025 Dwayne C.</p>
-  </footer>
-  <script src="script.js"></script>
 </html>
