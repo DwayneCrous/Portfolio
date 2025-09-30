@@ -15,9 +15,14 @@
         box-sizing: border-box;
       }
 
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Oxygen, Ubuntu, Cantarell, sans-serif;
+        -ms-overflow-style: none;
         line-height: 1.6;
         color: #222;
         background: #fafbfc;
@@ -83,7 +88,6 @@
         font: inherit;
         cursor: pointer;
         padding: 0.5rem 1rem;
-        border-radius: 4px;
         transition: background 0.2s;
       }
 
@@ -170,7 +174,6 @@
       .tech-stack li {
         background: #fff;
         border: 2px solid #e0e0e0;
-        border-radius: 8px;
         padding: 0.5rem 1.25rem;
         color: #222;
         font-size: 1rem;
@@ -185,8 +188,8 @@
 
       .bento-board {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2rem;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -195,66 +198,90 @@
 
       .bento-card {
         background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.09);
-        padding: 2rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-        transition: all 0.3s ease;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 420px;
+        max-width: 370px;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: box-shadow 0.2s, transform 0.2s;
       }
 
       .bento-card:hover {
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         transform: translateY(-4px);
       }
 
-      .bento-title {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #222;
-      }
-
-      .bento-content {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .bento-desc {
-        flex: 1.5;
-        display: flex;
-        align-items: center;
-      }
-
-      .bento-desc p {
-        font-size: 1.05rem;
-        color: #444;
-        line-height: 1.7;
-        margin: 0;
-        text-align: left;
-      }
-
       .bento-img {
-        flex: 1;
+        width: 100%;
+        height: 180px;
+        background: #f8f9fa;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-bottom: 1px solid #e9ecef;
       }
 
       .bento-img img {
         width: 100%;
-        max-width: 400px;
-        height: 250px;
+        height: 100%;
         object-fit: contain;
-        border-radius: 12px;
-        background: #f5f5f5;
-        padding: 0.5rem;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        background: #f8f9fa;
+      }
+
+      .bento-content {
+        width: 100%;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
+        flex: 1;
+      }
+
+      .bento-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: #222;
+        text-align: center;
+      }
+
+      .bento-desc {
+        font-size: 0.97rem;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+        text-align: center;
+      }
+
+      .bento-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: #222;
+        border: none;
+        padding: 0.7rem 1.3rem;
+        color: #fff;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+        text-decoration: none;
+        margin-top: 0.5rem;
+      }
+
+      .bento-button:hover {
+        background: #444;
+        transform: translateY(-2px);
+      }
+
+      .bento-button i {
+        font-size: 0.95rem;
       }
 
       /* Work Experience Section */
@@ -295,14 +322,14 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 2rem;
+        gap: 1rem;
+        margin-top: 10px;
       }
 
       .slide-contact-me li {
         background: #fff;
         border-radius: 12px;
-        padding: 1.5rem 2rem;
+        padding: 10px 2rem;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
         transition: all 0.3s ease;
       }
@@ -323,25 +350,6 @@
 
       .slide-contact-me a i {
         font-size: 1.5rem;
-        color: #555;
-      }
-
-      /* Footer */
-      footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-        text-align: center;
-        padding: 1rem 0;
-        z-index: 1000;
-      }
-
-      footer p {
-        margin: 0;
-        font-size: 0.9rem;
         color: #555;
       }
 
@@ -400,29 +408,6 @@
               Get in touch
             </button>
           </li>
-          <li class="blog">
-            <a href="https://dwaynec.dev" target="_blank" rel="noopener"
-              >Blog</a
-            >
-          </li>
-          <li class="case-studies">
-            <a
-              href="https://dwaynec.dev/case-studies"
-              target="_blank"
-              rel="noopener"
-              >Case Studies</a
-            >
-          </li>
-          <li class="now-page">
-            <a href="https://dwaynec.dev/now" target="_blank" rel="noopener"
-              >Now</a
-            >
-          </li>
-          <li class="light-dark-toggle">
-            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
-              🌙
-            </button>
-          </li>
         </ul>
       </nav>
     </header>
@@ -432,11 +417,10 @@
           <h2>About Me</h2>
           <img src="images/dwayne.jpg" alt="Dwayne C. Photo" />
           <p>
-            Hello! I'm Dwayne Crous, an aspiring software developer that has had
-            a love with technology since I was very young. I love building,
-            creating and tinkering on things that make life easier and watching
-            my ideas come to life. I am currently studying a bachelor's degree
-            in Software Development while working part time at a hardware store.
+            I'm Dwayne Crous, a software and web developer based in South
+            Africa. I am currently studying for a Bachelor of Software
+            Development at CTU Training Solutions while working full time at a
+            hardware store in Lambert's Bay.
           </p>
           <p style="font-weight: 600; margin-top: 2rem">Tech Stack</p>
           <ul class="tech-stack">
@@ -455,22 +439,29 @@
           <h2>Projects</h2>
           <div class="bento-board">
             <div class="bento-card">
-              <h3 class="bento-title">Bean Map</h3>
+              <div class="bento-img">
+                <img src="images/beanmap.png" alt="Bean Map Screenshot" />
+              </div>
               <div class="bento-content">
-                <div class="bento-desc">
-                  <p>
-                    A comprehensive Svelte web app to discover, track, and
-                    explore coffee shops worldwide. Built with OpenStreetMap
-                    data and featuring a complete gamification system with
-                    challenges, badges, and detailed user profiles.
-                  </p>
-                </div>
-                <div class="bento-img">
-                  <img src="images/beanmap.png" alt="Bean Map Screenshot" />
-                </div>
+                <h3 class="bento-title">Bean Map</h3>
+                <p class="bento-desc">
+                  A comprehensive Svelte web app to discover, track, and explore
+                  coffee shops worldwide. Built with OpenStreetMap data and
+                  featuring a complete gamification system with challenges,
+                  badges, and detailed user profiles.
+                </p>
+                <a
+                  href="https://github.com/DwayneCrous/BeanMap"
+                  class="bento-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  View on GitHub
+                </a>
               </div>
             </div>
-            <div class="bento-card">
+            <!-- <div class="bento-card">
               <h3 class="bento-title">
                 SCFTA - Super Cool Finance Tracker App
               </h3>
@@ -486,55 +477,76 @@
                   <img src="images/scfta.png" alt="SCFTA Screenshot" />
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="bento-card">
-              <h3 class="bento-title">Orion</h3>
+              <div class="bento-img">
+                <img src="images/orion.png" alt="Orion Screenshot" />
+              </div>
               <div class="bento-content">
-                <div class="bento-desc">
-                  <p>
-                    Orion is a multi-purpose Discord bot designed for
-                    moderation, utility, and fun. It offers weather and currency
-                    APIs, news headlines, moderation tools, interactive
-                    mini-games, and more—all powered by discord.js.
-                  </p>
-                </div>
-                <div class="bento-img">
-                  <img src="images/orion.png" alt="Orion Screenshot" />
-                </div>
+                <h3 class="bento-title">Orion</h3>
+                <p class="bento-desc">
+                  Orion is a multi-purpose Discord bot designed for moderation,
+                  utility, and fun. It offers weather and currency APIs, news
+                  headlines, moderation tools, interactive mini-games, and
+                  more—all powered by discord.js.
+                </p>
+                <a
+                  href="https://github.com/DwayneCrous/Orion"
+                  class="bento-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  View on GitHub
+                </a>
               </div>
             </div>
             <div class="bento-card">
-              <h3 class="bento-title">Go-Do-It</h3>
+              <div class="bento-img">
+                <img src="images/godoit.png" alt="Go-Do-It Screenshot" />
+              </div>
               <div class="bento-content">
-                <div class="bento-desc">
-                  <p>
-                    A simple terminal-based Todo List application written in Go,
-                    using the Bubble Tea TUI framework.
-                  </p>
-                </div>
-                <div class="bento-img">
-                  <img src="images/godoit.png" alt="Go-Do-It Screenshot" />
-                </div>
+                <h3 class="bento-title">Go-Do-It</h3>
+                <p class="bento-desc">
+                  A simple terminal-based Todo List application written in Go,
+                  using the Bubble Tea TUI framework.
+                </p>
+                <a
+                  href="https://github.com/DwayneCrous/go-do-it"
+                  class="bento-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  View on GitHub
+                </a>
               </div>
             </div>
             <div class="bento-card">
-              <h3 class="bento-title">Dwayne's Database Viewer</h3>
+              <div class="bento-img">
+                <img
+                  src="images/db-viewer.png"
+                  alt="Database Viewer Screenshot"
+                />
+              </div>
               <div class="bento-content">
-                <div class="bento-desc">
-                  <p>
-                    This project is a full-stack SQLite database viewer and
-                    manager. It features a Node.js backend with REST API
-                    endpoints and a React frontend for browsing, editing, and
-                    managing database tables and files through a user-friendly
-                    web interface.
-                  </p>
-                </div>
-                <div class="bento-img">
-                  <img
-                    src="images/db-viewer.png"
-                    alt="Database Viewer Screenshot"
-                  />
-                </div>
+                <h3 class="bento-title">Dwayne's Database Viewer</h3>
+                <p class="bento-desc">
+                  This project is a full-stack SQLite database viewer and
+                  manager. It features a Node.js backend with REST API endpoints
+                  and a React frontend for browsing, editing, and managing
+                  database tables and files through a user-friendly web
+                  interface.
+                </p>
+                <a
+                  href="https://github.com/DwayneCrous/Database-Viewer"
+                  class="bento-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  View on GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -578,7 +590,7 @@
                 rel="noopener"
               >
                 <i class="fa-brands fa-linkedin"></i>
-                linkedin.com/in/dwaynecrous/
+                LinkedIn
               </a>
             </li>
             <li>
@@ -588,15 +600,12 @@
                 rel="noopener"
               >
                 <i class="fa-brands fa-github"></i>
-                github.com/DwayneCrous
+                GitHub
               </a>
             </li>
           </ul>
         </div>
       </div>
     </main>
-    <footer>
-      <p>&copy; 2025 Dwayne C.</p>
-    </footer>
   </body>
 </html>
