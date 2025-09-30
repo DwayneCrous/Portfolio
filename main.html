@@ -186,7 +186,7 @@
         padding-bottom: 6rem;
       }
 
-      .bento-board {
+      .project-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 2rem;
@@ -196,7 +196,7 @@
         padding: 2rem 0;
       }
 
-      .bento-card {
+      .project-card {
         background: #fff;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
         display: flex;
@@ -210,12 +210,12 @@
         transition: box-shadow 0.2s, transform 0.2s;
       }
 
-      .bento-card:hover {
+      .project-card:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         transform: translateY(-4px);
       }
 
-      .bento-img {
+      .project-img {
         width: 100%;
         height: 180px;
         background: #f8f9fa;
@@ -225,14 +225,14 @@
         border-bottom: 1px solid #e9ecef;
       }
 
-      .bento-img img {
+      .project-img img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         background: #f8f9fa;
       }
 
-      .bento-content {
+      .project-content {
         width: 100%;
         padding: 1.5rem 1.5rem 1.5rem 1.5rem;
         display: flex;
@@ -242,7 +242,7 @@
         flex: 1;
       }
 
-      .bento-title {
+      .project-title {
         font-size: 1.2rem;
         font-weight: 700;
         margin: 0 0 0.5rem 0;
@@ -250,7 +250,7 @@
         text-align: center;
       }
 
-      .bento-desc {
+      .project-desc {
         font-size: 0.97rem;
         color: #555;
         line-height: 1.6;
@@ -258,7 +258,7 @@
         text-align: center;
       }
 
-      .bento-button {
+      .project-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -275,12 +275,12 @@
         margin-top: 0.5rem;
       }
 
-      .bento-button:hover {
+      .project-button:hover {
         background: #444;
         transform: translateY(-2px);
       }
 
-      .bento-button i {
+      .project-button i {
         font-size: 0.95rem;
       }
 
@@ -437,14 +437,14 @@
         </div>
         <div class="slide slide-projects" id="projects">
           <h2>Projects</h2>
-          <div class="bento-board">
-            <div class="bento-card">
-              <div class="bento-img">
+          <div class="project-list">
+            <div class="project-card">
+              <div class="project-img">
                 <img src="images/beanmap.png" alt="Bean Map Screenshot" />
               </div>
-              <div class="bento-content">
-                <h3 class="bento-title">Bean Map</h3>
-                <p class="bento-desc">
+              <div class="project-content">
+                <h3 class="project-title">Bean Map</h3>
+                <p class="project-desc">
                   A comprehensive Svelte web app to discover, track, and explore
                   coffee shops worldwide. Built with OpenStreetMap data and
                   featuring a complete gamification system with challenges,
@@ -452,7 +452,7 @@
                 </p>
                 <a
                   href="https://github.com/DwayneCrous/BeanMap"
-                  class="bento-button"
+                  class="project-button"
                   target="_blank"
                   rel="noopener"
                 >
@@ -478,13 +478,13 @@
                 </div>
               </div>
             </div> -->
-            <div class="bento-card">
-              <div class="bento-img">
+            <div class="project-card">
+              <div class="project-img">
                 <img src="images/orion.png" alt="Orion Screenshot" />
               </div>
-              <div class="bento-content">
-                <h3 class="bento-title">Orion</h3>
-                <p class="bento-desc">
+              <div class="project-content">
+                <h3 class="project-title">Orion</h3>
+                <p class="project-desc">
                   Orion is a multi-purpose Discord bot designed for moderation,
                   utility, and fun. It offers weather and currency APIs, news
                   headlines, moderation tools, interactive mini-games, and
@@ -492,7 +492,7 @@
                 </p>
                 <a
                   href="https://github.com/DwayneCrous/Orion"
-                  class="bento-button"
+                  class="project-button"
                   target="_blank"
                   rel="noopener"
                 >
@@ -501,19 +501,19 @@
                 </a>
               </div>
             </div>
-            <div class="bento-card">
-              <div class="bento-img">
+            <div class="project-card">
+              <div class="project-img">
                 <img src="images/godoit.png" alt="Go-Do-It Screenshot" />
               </div>
-              <div class="bento-content">
-                <h3 class="bento-title">Go-Do-It</h3>
-                <p class="bento-desc">
+              <div class="project-content">
+                <h3 class="project-title">Go-Do-It</h3>
+                <p class="project-desc">
                   A simple terminal-based Todo List application written in Go,
                   using the Bubble Tea TUI framework.
                 </p>
                 <a
                   href="https://github.com/DwayneCrous/go-do-it"
-                  class="bento-button"
+                  class="project-button"
                   target="_blank"
                   rel="noopener"
                 >
@@ -522,16 +522,16 @@
                 </a>
               </div>
             </div>
-            <div class="bento-card">
-              <div class="bento-img">
+            <div class="project-card">
+              <div class="project-img">
                 <img
                   src="images/db-viewer.png"
                   alt="Database Viewer Screenshot"
                 />
               </div>
-              <div class="bento-content">
-                <h3 class="bento-title">Dwayne's Database Viewer</h3>
-                <p class="bento-desc">
+              <div class="project-content">
+                <h3 class="project-title">Dwayne's Database Viewer</h3>
+                <p class="project-desc">
                   This project is a full-stack SQLite database viewer and
                   manager. It features a Node.js backend with REST API endpoints
                   and a React frontend for browsing, editing, and managing
@@ -540,7 +540,7 @@
                 </p>
                 <a
                   href="https://github.com/DwayneCrous/Database-Viewer"
-                  class="bento-button"
+                  class="project-button"
                   target="_blank"
                   rel="noopener"
                 >

@@ -4,17 +4,17 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## Features
 
-- **About Me:** Learn more about my background and interests.
-- **Projects:** Explore some of the web applications and platforms I've built.
+- **Minimal, Responsive Design:** Clean, professional layout with a fixed header and smooth scrolling.
+- **About Me:** Learn more about my background, interests, and tech stack.
+- **Projects Grid:** Projects are displayed in a modern, consistent grid with images, descriptions, and direct GitHub links.
 - **Work Experience:** View my professional history and roles.
+- **Contact:** Find ways to connect with me via email, LinkedIn, or GitHub.
 
 ## Project Structure
 
 ```
-main.html      # Main HTML file for the website
-styles.css     # Custom styles for layout and design
-script.js      # JavaScript for interactive features
-images/        # Screenshots and images for projects
+main.html      # Main HTML file for the website (all layout and styles in one file)
+images/        # Screenshots and images for projects and profile
 README.md      # Project documentation
 ```
 
@@ -23,13 +23,13 @@ README.md      # Project documentation
 To view the portfolio locally:
 
 1. Clone or download the repository.
-2. Open `main.html` in your web browser.
+2. Open `main.html` in your web browser (no build step required).
 
 ## Customization
 
-- Update `images/` with your own project screenshots.
-- Modify `main.html` to add more sections or update content.
-- Edit `styles.css` to change the look and feel.
+- Update `images/` with your own project screenshots and profile photo.
+- Edit `main.html` to add more sections, update content, or adjust the project grid and cards.
+- All styles are in a `<style>` block in `main.html` for easy editing.
 
 ## License
 
@@ -37,4 +37,4 @@ This project is open source and available under the [MIT License](https://openso
 
 ---
 
-&copy; 2025 Dwayne C.
+© 2025 Dwayne C.
