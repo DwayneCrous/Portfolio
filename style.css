@@ -17,7 +17,6 @@ body {
   background: #fafbfc;
 }
 
-/* Header Styles */
 header {
   position: fixed;
   top: 0;
@@ -99,12 +98,10 @@ main {
   margin-top: 80px;
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Slides Layout */
 .slides-container {
   position: relative;
 }
@@ -129,7 +126,6 @@ html {
   color: #222;
 }
 
-/* About Section */
 .slide-about {
   text-align: center;
 }
@@ -169,7 +165,6 @@ html {
   font-weight: 500;
 }
 
-/* Projects Section */
 .slide-projects {
   min-height: auto;
   padding-bottom: 6rem;
@@ -273,7 +268,6 @@ html {
   font-size: 0.95rem;
 }
 
-/* Work Experience Section */
 .slide-work-experience ul {
   list-style: none;
   max-width: 800px;
@@ -306,7 +300,6 @@ html {
   font-style: italic;
 }
 
-/* Contact Section */
 .slide-contact-me ul {
   list-style: none;
   display: flex;
@@ -342,7 +335,6 @@ html {
   color: #555;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
