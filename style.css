@@ -138,7 +138,7 @@ html {
   color: #444;
 }
 
-.slide-about img {
+.slide-about > img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -147,22 +147,86 @@ html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  list-style: none;
-  margin-top: 1rem;
+/* Tech Stack Carousel Animation */
+@keyframes scroll-tech-stack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-120px * 9));
+  }
 }
 
-.tech-stack li {
-  background: #fff;
-  border: 2px solid #e0e0e0;
-  padding: 0.5rem 1.25rem;
-  color: #222;
-  font-size: 1rem;
-  font-weight: 500;
+.tech-stack-slider {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 120px;
+  margin: 2rem auto 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+}
+
+.tech-stack-slider::before,
+.tech-stack-slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 120px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-stack-slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.tech-stack-slider::before {
+  left: 0;
+  top: 0;
+}
+
+.tech-stack-track {
+  animation: scroll-tech-stack 25s linear infinite;
+  display: flex;
+  width: calc(120px * 18);
+}
+
+.tech-stack-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-stack-slide {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.tech-stack-slide img {
+  width: 100%;
+  height: 100%;
+  max-width: 90px;
+  max-height: 90px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 0;
+  background: none;
+}
+
+.tech-stack-slide:hover img {
+  transform: scale(1.15);
 }
 
 .slide-projects {
