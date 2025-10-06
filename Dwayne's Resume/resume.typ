@@ -33,8 +33,6 @@
   title: "Fiverr Freelancer",
   location: "Addo, Eastern Cape",
   date: "August 2024 - February 2025",
-  description: "Worked alongside colleagues to help build and maintain Discord bots that we  deployed to Linux VPS servers using Docker.",
-  title-link: "https://github.com/DeveloperPaul123",
 )
 
 #resume-item[
@@ -47,7 +45,6 @@
   title: "Bayside Hardware",
   location: "Lambert's Bay, Western Cape",
   date: "December 2025 - December 2028",
-  description: "Previous Company, Inc.",
 )
 
 #resume-item[
@@ -114,6 +111,13 @@
 #block(below: 0.65em)
 
 = Education
+#resume-entry(
+  title: "Sonop Laerskool",
+  location: "Despatch, Eastern Cape",
+  date: "Feb 2014 - Oct 2016",
+  description: "Primary School",
+)
+
 #resume-entry(
   title: "Curro Westbrook",
   location: "Port Elizabeth, Eastern Cape",
